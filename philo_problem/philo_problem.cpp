@@ -3,9 +3,8 @@
 #include <thread>
 using namespace std;
 
-// creating chopstick semaphores
-int chopstick[5] = { 1,1,1,1,1 };
-
+//making a pointer for chopstick array global
+int* chopstick;
 
 void wait(int& semaphore)
 {
@@ -33,24 +32,36 @@ void philo_process(int id)
         wait(chopstick[id]);
         wait(chopstick[(id + 1) % 5]);
         cout << eating;
-        this_thread::sleep_for(std::chrono::seconds(2)); //philosopher takes his time eating
+        this_thread::sleep_for(chrono::seconds(2)); //philosopher takes his time eating
 
         //philosopher signals he is done eating and the chopsticks are free
         signal(chopstick[id]);
         signal(chopstick[(id + 1) % 5]);
         cout << thinking;
-        this_thread::sleep_for(std::chrono::seconds(2)); //philosopher takes his time thinking
+        this_thread::sleep_for(chrono::seconds(2)); //philosopher takes his time thinking
     } while (true); //because the only thing the philosopher can do is either think or eat forever
 }
 
 int main()
 {
-    // creating philosopher threads and assigning them their function
-    thread philo1(philo_process, 0);
-    thread philo2(philo_process, 1);
-    thread philo3(philo_process, 2);
-    thread philo4(philo_process, 3);
-    thread philo5(philo_process, 4);
+    int philo_num;
+    cout << "Enter the number of philosophers: ";
+    cin >> philo_num;
+
+    //creating chopstick semaphores dynamically
+    chopstick = new int[philo_num];
+    for (int i = 0; i < philo_num; i++)
+    {
+        chopstick[i] = 1; //all chopsticks are available at first
+    }
+
+
+    //creating philosopher threads dynamically
+    thread* philosophers = new thread[philo_num];
+    for (int i = 0; i < philo_num; i++)
+    {
+        philosophers[i] = thread(philo_process, i);
+    }
 
     while (true) {} //so the program doesn't end
     return 0;
