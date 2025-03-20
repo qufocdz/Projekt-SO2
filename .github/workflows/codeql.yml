@@ -38,7 +38,7 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-        ./philo_problem
+        cd ./philo_problem
         make clean
         make
 
