@@ -1,2 +1,3 @@
 ﻿  philo_problem.cpp
+C:\Users\synek\Documents\GitHub\Projekt-SO2\philo_problem\philo_problem.cpp(71,16): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
   philo_problem.vcxproj -> C:\Users\synek\Documents\GitHub\Projekt-SO2\philo_problem\x64\Debug\philo_problem.exe
