@@ -15,7 +15,7 @@
 ### Solution
 In order to solve the N-Philosophers problem I implemented a solution consisting of mutex semaphores and asymmetric chopstick picking up order.
 I implemented the following functions for semaphores:
-- wait(int& semaphore) - It's a basic semaphore function called by a thread that wants to get access to a resource. It has to actively wait for the semaphores value to be atleast 1.
+- wait(int& semaphore) - It's a basic semaphore function called by a thread that wants to get access to a resource. It has to actively wait for the semaphores value to be at least 1.
 - signal(int& semaphore) - It's a basic semaphore function called by a thread that wants to signal he doesn't use the resources anymore and they are free to pick up.
   
 Then I also implemented the following function for threads:
