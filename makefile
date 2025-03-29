@@ -1,10 +1,10 @@
 default: philo_program
 
-philo_program: main.o
-	g++ -Wall -Wextra -std=c++11 -o philo_program main.o
+philo_program: philo_problem/main.o
+	g++ -Wall -Wextra -std=c++11 -o philo_problem/philo_program philo_problem/main.o
 
-main.o: main.cpp
-	g++ -Wall -Wextra -std=c++11 -c main.cpp -o main.o
+philo_problem/main.o: philo_problem/main.cpp
+	g++ -Wall -Wextra -std=c++11 -c philo_problem/main.cpp -o philo_problem/main.o
 
 clean:
-	rm -f main.o philo_program
+	rm -f philo_problem/main.o philo_problem/philo_program
