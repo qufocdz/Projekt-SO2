@@ -8,7 +8,7 @@
   
 ### Installation and usage
 1. Clone the repository.
-2. Either compile the main.cpp file (C++11 at least for to_string() to work) or find philo_problem.exe in philo_problem/x64/Debug directory.
+2. Use makefile to compile code or find philo_problem.exe in ./x64/Debug directory.
 3. Run philo_problem.exe.
 4. Enter the number of philosophers and watch the program run.
 
