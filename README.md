@@ -8,14 +8,14 @@
   
 ### Installation and usage
 1. Clone the repository.
-2. Either compile the main.cpp file (C++11 at least for to_string() to work) or find philo_problem.exe in philo_problem/x64/Debug directory.
+2. Use makefile to compile code or find philo_problem.exe in ./x64/Debug directory.
 3. Run philo_problem.exe.
 4. Enter the number of philosophers and watch the program run.
 
 ### Solution
 In order to solve the N-Philosophers problem I implemented a solution consisting of mutex semaphores and asymmetric chopstick picking up order.
 I implemented the following functions for semaphores:
-- wait(int& semaphore) - It's a basic semaphore function called by a thread that wants to get access to a resource. It has to actively wait for the semaphores value to be atleast 1.
+- wait(int& semaphore) - It's a basic semaphore function called by a thread that wants to get access to a resource. It has to actively wait for the semaphores value to be at least 1.
 - signal(int& semaphore) - It's a basic semaphore function called by a thread that wants to signal he doesn't use the resources anymore and they are free to pick up.
   
 Then I also implemented the following function for threads:
