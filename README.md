@@ -43,10 +43,10 @@ The synchronization issue appears when a few Clients want to become a Writer at 
 1. Clone the repository.
 2. Run the server by either:
    2.1. Using python ./server.py.
-   2.2. Finding server.exe and executing it.
+   2.2. Finding ./dist/server.exe and executing it.
 3. Run up to 5 clients by:
    3.1. Using python ./client.py.
-   3.2. Finding client.exe and executing it.
+   3.2. Finding ./dist/client.exe and executing it.
 5. For each open client, set a nickname to enter chat.
 6. Each client now has access to chat server and can type and send their messages.
 
