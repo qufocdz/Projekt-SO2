@@ -50,6 +50,15 @@ The synchronization issue appears when a few Clients want to become a Writer at 
 5. For each open client, set a nickname to enter chat.
 6. Each client now has access to chat server and can type and send their messages.
 
+### Solution
+In order to solve the multithreaded chat server's Writers-Readerslike problem I implemented a solution consisting of Mutex Locks.
+I used Mutex Locks from Python's Threading library:
+- broadcast_mutex - blocks the access to shared ability of broadcasting a message, which makes sure the message history is in order,
+- connection_mutex - blocks the access to connections_list, which is made up of ClientConnection threads, as it can be modified by various threads during it's lifetime,
+  
+Then I also created a ClientConnection class extending Thread, overwritting the Thread's run method with one that receives messages and tries to broadcast them in a manner discussed below.
+I also added methods to handle the disconnection and a few parameters with Client's info.
+
 **Explanation of solution:**
 - Client Connections = extended Threads.
 - Server has one shared resource, which is connections list and one shared ability, which is broadcasting (meaning at any time only one Client Connection thread can broadcast).
