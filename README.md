@@ -37,7 +37,7 @@ The process of creating chopstick semaphores and and Philosopher threads is hand
 The second assignement of the project is realised in the chat_server directory. The goal was to create a multithreaded chat server capable of creating a new thread for each client connection and synchronizing the communication between clients.
 This problem vaguely resembles the classical Readers-Writers problem, in which many readers can access one resource, but when a resource is being modified by a Writer, only he can have access to it.
 The twist is, Client can remain silent, be a Reader and only read the data sent to him, or he can become a Writer at any time and send his own message, acquiring resources needed to broadcast his message to everyone.
-The synchronization issue appears when a few Clients want to become a Writer at the same time, which is a race condition, and also when one of Clients disconnects/connets when being broadcasted to, which modifies the connections list the Writer operates on.
+The synchronization issue appears when a few Clients want to become a Writer at the same time, which is a race condition, and also when one of Clients disconnects/connects when being broadcasted to, which modifies the connections list the Writer operates on.
 
 ### Installation and usage
 1. Clone the repository.
