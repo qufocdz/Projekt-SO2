@@ -1,4 +1,4 @@
-# Project-SO2
+# Synchronization-Problems
 ## Part 1 - N-Philosophers Problem
 ### Description
 The first assignement of the project is realised in the philo_problem directory. The goal was to present a solution to the classical N-Philosophers Problem.
